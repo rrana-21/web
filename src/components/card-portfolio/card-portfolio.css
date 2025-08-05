@@ -1,143 +1,171 @@
+/* Force override all conflicting styles - No Images Portfolio Cards */
 .card__portfolio {
-	width: 332px;
-	height: 246px;
-	overflow: hidden;
-	border-radius: 22px;
-	background: #000;
-	position: relative;
+	width: 100% !important;
+	max-width: 380px !important;
+	min-height: 400px !important;
+	border-radius: 20px !important;
+	background: rgba(255, 255, 255, 0.08) !important;
+	position: relative !important;
+	overflow: hidden !important;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+	transition: all 0.3s ease !important;
+	border: 2px solid rgba(116, 198, 157, 0.2) !important;
+	backdrop-filter: blur(10px) !important;
+	transform: none !important;
+	display: flex !important;
+	flex-direction: column !important;
 }
 
+.card__portfolio:hover {
+	box-shadow: 0 0 25px rgba(116, 198, 157, 0.8), 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+	border-color: rgba(116, 198, 157, 0.4) !important;
+	transform: translateY(-4px) !important;
+	background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Hide the image completely */
 .card__portfolio img {
-	object-fit: cover;
-	object-position: center 0;
-	height: 160px;
-	width: 332px;
-	background: #000;
+	display: none !important;
 }
 
 .card__portfolio .descripcion__container {
-	position: absolute;
+	position: relative !important;
+	display: flex !important;
+	flex-direction: column !important;
+	width: 100% !important;
+	height: 100% !important;
+	padding: 32px !important;
+	background: transparent !important;
+	color: var(--primary-100) !important;
+	transform: none !important;
+	transition: none !important;
+}
+
+/* Add project icon at the top */
+.card__portfolio .descripcion__container::before {
+	content: '';
+	width: 60px;
+	height: 60px;
+	background: linear-gradient(135deg, var(--primary-60) 0%, var(--primary-50) 100%);
+	border-radius: 16px;
+	margin-bottom: 24px;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	transition: 0.35s;
-	background: #231724;
-	transform: translateY(63%);
-	padding-top: 15px;
-	transition-property: transform, padding-top;
-	color: var(--on-primary);
-}
-
-.card__portfolio:hover .descripcion__container {
-	transform: translateY(0%);
-	padding-top: 55px;
-}
-
-.card__portfolio .descripcion__container .card__title {
-	position: absolute;
-	display: block;
-	width: max-content;
-	top: 0;
-	padding: 4px 22px;
-	font-size: var(--text-title);
-	font-weight: 500;
-	background: #0008;
-	backdrop-filter: blur(10px);
-	z-index: 2;
-	transform: translateY(-100%);
-	border-radius: 0 8px 0 0;
-	transition-duration: 0.35s;
-	transition-property: background, transform;
-}
-
-.card__portfolio:hover .descripcion__container .card__title {
-	transform: translateY(11%);
-	backdrop-filter: none;
-	background: #0000;
-}
-
-.card__portfolio .descripcion {
-	padding: 0 22px;
-	display: flex;
-	width: 100%;
-	height: 100%;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.card__portfolio .descripcion p {
-	font-size: var(--text-medium);
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 20px;
-	transition: 0.35s height;
-}
-
-.card__portfolio:hover .descripcion p {
-	overflow: auto;
-	white-space: wrap;
-	height: 90px;
-	max-height: 90px;
-}
-
-.card__portfolio .descripcion p::-webkit-scrollbar {
-	width: 4px;
-	background: var(--surface);
-	border-radius: 4px;
-}
-
-.card__portfolio .descripcion p::-webkit-scrollbar-thumb {
-	width: 2px;
-	background: var(--primary);
-	border-radius: 4px;
-}
-
-.card__portfolio .skills {
-	display: flex;
-	gap: 10px;
-	font-size: 3rem; /* Estamos usando rem para los textos */
-}
-
-.card__portfolio .buttons {
-	padding: 14px;
-	width: 100%;
-	height: 47px;
-	box-sizing: border-box;
-	display: flex;
+	align-items: center;
 	justify-content: center;
-	gap: 22px;
-	font-size: var(--text-button);
-}
-
-.card__portfolio .buttons a {
+	font-size: 24px;
+	color: var(--primary-0);
+	font-weight: bold;
 	position: relative;
 }
 
-.card__portfolio .buttons a:hover {
-	color: var(--primary-80);
+/* Different icons for different projects */
+.card__portfolio:nth-child(1) .descripcion__container::before {
+	content: '☀️';
+}
+.card__portfolio:nth-child(2) .descripcion__container::before {
+	content: '🧠';
+}
+.card__portfolio:nth-child(3) .descripcion__container::before {
+	content: '✈️';
+}
+.card__portfolio:nth-child(4) .descripcion__container::before {
+	content: '🚗';
+}
+.card__portfolio:nth-child(5) .descripcion__container::before {
+	content: '🏀';
+}
+.card__portfolio:nth-child(6) .descripcion__container::before {
+	content: '🌧️';
 }
 
-.card__portfolio .buttons a::after {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	content: '';
-	height: 2px;
-	width: 100%;
-	transform-origin: 0 0;
-	transform: scale(0);
-	background: var(--primary);
-	transition: 0.35s transform;
+.card__portfolio .card__title {
+	font-size: 1.8rem !important;
+	font-weight: 600 !important;
+	margin-bottom: 16px !important;
+	color: var(--primary-100) !important;
+	line-height: 1.3 !important;
+	position: relative !important;
+	transform: none !important;
+	background: transparent !important;
 }
-.card__portfolio .buttons a:hover::after {
-	transform: scale(1);
+
+.card__portfolio .descripcion {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 20px !important;
+	flex: 1 !important;
+}
+
+.card__portfolio .descripcion p {
+	font-size: 1.4rem !important;
+	line-height: 1.6 !important;
+	color: var(--primary-90) !important;
+	margin: 0 !important;
+	overflow: visible !important;
+	white-space: normal !important;
+	height: auto !important;
+	transition: none !important;
+	opacity: 0.9 !important;
+}
+
+.card__portfolio .skills {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	gap: 8px !important;
+	margin: 16px 0 !important;
+}
+
+.card__portfolio .skills .iconify {
+	font-size: 2rem !important;
+	color: var(--primary-60) !important;
+	padding: 8px !important;
+	background: rgba(116, 198, 157, 0.15) !important;
+	border-radius: 8px !important;
+	border: 1px solid rgba(116, 198, 157, 0.3) !important;
+	transition: all 0.3s ease !important;
+}
+
+.card__portfolio .skills .iconify:hover {
+	color: var(--primary-50) !important;
+	background: rgba(116, 198, 157, 0.25) !important;
+	transform: scale(1.1) !important;
+}
+
+.card__portfolio .buttons {
+	margin-top: auto !important;
+	padding-top: 20px !important;
+}
+
+.card__portfolio .buttons a {
+	display: block !important;
+	width: 100% !important;
+	padding: 14px !important;
+	background: linear-gradient(135deg, var(--primary-60) 0%, var(--primary-50) 100%) !important;
+	color: var(--primary-0) !important;
+	text-decoration: none !important;
+	border-radius: 12px !important;
+	text-align: center !important;
+	font-weight: 600 !important;
+	transition: all 0.3s ease !important;
+	border: none !important;
+	transform: none !important;
+	font-size: 1.1rem !important;
+}
+
+.card__portfolio .buttons a:hover {
+	background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-40) 100%) !important;
+	transform: translateY(-2px) !important;
+	box-shadow: 0 4px 12px rgba(116, 198, 157, 0.3) !important;
 }
 
 .card__portfolio .buttons a span {
-	display: flex;
-	align-items: center;
-	gap: 4px;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 8px !important;
+}
+
+/* Force remove any inherited transforms */
+.card__portfolio * {
+	transform: none !important;
 }

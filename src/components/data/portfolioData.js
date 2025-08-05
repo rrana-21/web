@@ -1,104 +1,114 @@
 /**
- * @SofiDev Esto es JSDOC, si consideras que puede ser complicado solo borralo, es un comentario, no afectará en nada
  * @typedef PortafolioData
- * @property {string} imgSrc Url de la imagen
- * @property {string} title Titulo de la tarjeta
- * @property {string[]} skills Array con tus habilidades ej: ['React', 'CSS', 'JavaScript']
- * @property {string} descripcion La descripcion de la tarjeta
- * @property {string} demoURL Url de una pagina de demostración
- * @property {string} repoURL Url del repositorio, ej: https://github.com/usuario/repo
- * @property {string} anim La animación que se ejecutará cuando se cargue la tarjeta, ej: fade-up, fade-right, fade-left, fade-down
- * @property {number} averageBrightness Cuanto brillo tendrá el color de fondo de la tarjeta, ej: 0.1
+ * @property {string} imgSrc Image URL
+ * @property {string} title Card title
+ * @property {string[]} skills Array with your skills e.g.: ['Python', 'R', 'SQL']
+ * @property {string} descripcion Card description
+ * @property {string} demoURL Demo page URL
+ * @property {string} repoURL Repository URL, e.g.: https://github.com/rrana-21/repo
+ * @property {string} anim Animation that will execute when the card loads
+ * @property {number} averageBrightness How much brightness the card background color will have
  */
 
-/**
- * @SofiDev Esto es JSDOC, si consideras que puede ser complicado solo borralo, es un comentario, no afectará en nada
- * @type {PortafolioData[]}
- */
 export const portafolioData = [
 	{
-		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
-		title: 'Restaurant',
-		skills: ['React', 'StyledComponents'],
-		descripcion:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+		imgSrc: '/img/solar-recovery.png',
+		title: 'Solar Recovery',
+		skills: ['Python', 'PyTorch', 'Pandas', 'GCP'],
+		descripcion:'Survival-analysis framework modeling time-to-recovery of utility-scale PV systems after adverse weather events.',
+		repoURL: 'https://github.com/rrana-21/pv-recovery-modeling',
 		anim: 'fade-right',
+		averageBrightness: 0.3,
 	},
 	{
-		imgSrc: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/299377097/original/7eb7dcebe244fcf5ad75d92b0969fc116946bd57/create-professional-amd-responsive-wordpress-website.jpg',
-		title: 'E-commerce',
-		skills: ['JavaScript', 'Bootstrap'],
-		descripcion:
-			' Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+		imgSrc: '/img/memenet.png',
+		title: 'MemeNet',
+		skills: ['Python', 'PyTorch', 'GCP'],
+		descripcion:'Deep multimodal classifier that fuses image and text embeddings to automatically detect hateful memes.',
+		repoURL: 'https://github.com/rrana-21/DeepMemeNet',
 		anim: 'fade-up',
+		averageBrightness: 0.2,
+	},
+	{
+		imgSrc: '/img/air-predict.png',
+		title: 'Air Predict',
+		skills: ['Python', 'SQL', 'Azure'],
+		descripcion: 'Web app forecasting flight delays using historical and live flight data fed into ML models for on-time estimates.',
+		repoURL: 'https://github.com/rrana-21/Flight-Delay-Prediction-App',
+		anim: 'fade-left',
+		averageBrightness: 0.4,
+	},
+	{
+		imgSrc: '/img/auto-value.jpg',
+		title: 'Auto Value',
+		skills: ['Shiny', 'SQL'],
+		descripcion:'Analytical toolkit using regression and market-trend features to predict used-car prices with high accuracy.',
+		repoURL: 'https://github.com/rrana-21/Car-Price-Prediction-Analysis',
+		anim: 'fade-right',
 		averageBrightness: 0.1,
 	},
 	{
-		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
-		title: 'Coffe Store',
-		skills: ['React', 'CSS'],
-		descripcion:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
-		anim: 'fade-left',
+		imgSrc: '/img/lineup-pro.jpg',
+		title: 'Lineup Pro',
+		skills: ['Python', 'Pandas', 'Streamlit'],
+		descripcion:'Optimization engine that recommends high-impact NBA starting lineups via player-stat algorithms and synergy scores.',
+		repoURL: 'https://github.com/rrana-21/NBA-Lineup-Optimization',
+		anim: 'fade-up',
+		averageBrightness: 0.3,
 	},
 	{
-		imgSrc: 'https://www.corse.mx/cdn/shop/files/tienda_lenceria-lenceria-hot_sale-ofertas-mexico-lenceria_seyx-encaje-corse_mx-corse_lenceria_1200_x_560_px_13.png?v=1712270274&width=1500',
-		title: 'Coffe Store',
-		skills: ['React', 'CSS'],
-		descripcion:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+		imgSrc: '/img/rain-stats.jpg',
+		title: 'Rain Stats',
+		skills: ['Python', 'Pandas', 'Streamlit'],
+		descripcion: 'Exploratory and statistical analysis of historical rainfall, highlighting trends, anomalies, and seasonal patterns.',
+		repoURL: 'https://github.com/rrana-21/Historical-Rainfall-Data-Analysis',
 		anim: 'fade-left',
-	},
-	{
-		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
-		title: 'Coffe Store',
-		skills: ['React', 'CSS'],
-		descripcion:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
-		anim: 'fade-left',
-	},
-	{
-		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
-		title: 'Restaurant',
-		skills: ['React', 'StyledComponents'],
-		descripcion:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
-		anim: 'fade-right',
+		averageBrightness: 0.2,
 	}
 ];
 
 const skillIcons = {
+	Python: 'simple-icons:python',
+	R: 'skill-icons:r-dark',
+	SQL: 'simple-icons:mysql',
+	Plotly: 'simple-icons:plotly',
+	Streamlit: 'simple-icons:streamlit',
+	Pandas: 'simple-icons:pandas',
+	Shiny: 'simple-icons:r',
+	'ggplot2': 'simple-icons:r',
+	'dplyr': 'simple-icons:r',
+	'Apache Airflow': 'simple-icons:apacheairflow',
+	PyTorch: 'simple-icons:pytorch',
+	PostgreSQL: 'skill-icons:postgresql-dark',
+	'Scikit-learn': 'simple-icons:scikitlearn',
+	TensorFlow: 'skill-icons:tensorflow-dark',
+	Jupyter: 'skill-icons:jupyter-dark',
+	Tableau: 'simple-icons:tableau',
+	'Power BI': 'simple-icons:powerbi',
+	MongoDB: 'skill-icons:mongodb',
+	'D3.js': 'skill-icons:d3js-dark',
 	JavaScript: 'skill-icons:javascript',
+	CSS: 'skill-icons:css',
+	HTML: 'skill-icons:html',
 	React: 'skill-icons:react-dark',
 	Astro: 'skill-icons:astro',
-	CSS: 'skill-icons:css',
 	Sass: 'skill-icons:sass',
 	StyledComponents: 'skill-icons:styledcomponents',
 	Bootstrap: 'skill-icons:bootstrap',
 	Tailwind: 'skill-icons:tailwindcss-dark',
+	GCP: 'simple-icons:googlecolab',
+	Azure: 'simple-icons:microsoft'
 };
 
 /**
- * @description Se mapea el portafolioData para que tenga los iconos de las habilidades
- * 	Puedes ver Array.map en https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+ * @description Maps the portfolioData so it has skill icons
+ * You can learn about Array.map at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
  */
 export const getPortafolioData = portafolioData.map((item) => {
 	return {
-		// Se coloca todo el contenido previo del item
+		// Place all previous item content
 		...item,
-		// Se cambian las skills por los iconos correspondientes
+		// Replace skills with corresponding icons
 		skills: item.skills.map((skill) => skillIcons[skill]),
 	};
 });

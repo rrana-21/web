@@ -3,12 +3,10 @@
 	width: 100%;
 	height: 100vh;
 	min-height: 100dvh;
-	background-size: 200%;
+	background: transparent;
 	display: flex;
 	flex-direction: column;
 	color: var(--on-primary);
-	background: var(--hero-bg);
-	animation: presentation 3s linear forwards;
 	align-items: center;
 	flex-wrap: wrap-reverse;
 	position: relative;
@@ -20,7 +18,7 @@
 	position: absolute;
 	height: 6rem;
 	width: 100%;
-	background: linear-gradient(0deg, var(--primary-0), #0000);
+	background: linear-gradient(0deg, transparent, #0000);
 	bottom: 0;
 }
 
@@ -63,6 +61,30 @@
 	max-width: 80%;
 }
 
+.hero__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+	margin-top: 32px;
+}
+
+.tag {
+	background: rgba(116, 198, 157, 0.15);
+	color: var(--primary-90);
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-size: var(--text-medium);
+	font-weight: 500;
+	border: 1px solid rgba(116, 198, 157, 0.3);
+	transition: all 0.3s ease;
+}
+
+.tag:hover {
+	background: rgba(116, 198, 157, 0.25);
+	transform: translateY(-2px);
+}
+
 @media screen and (max-width: 768px) {
 	.hero {
 		padding: 12rem 0 5rem 0;
@@ -85,17 +107,5 @@
 	.hero .hero__text {
 		font-size: var(--text-x-large);
 		text-align: center;
-	}
-}
-
-@keyframes presentation {
-	0% {
-		background-size: 200%;
-	}
-	50% {
-		background-position: 70%;
-	}
-	100% {
-		background-size: 100%;
 	}
 }

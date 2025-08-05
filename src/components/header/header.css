@@ -20,10 +20,9 @@
 	border-radius: 14px;
 	height: auto;
 	min-height: 7rem;
-	border: 0.03px solid #7c39fd47;
+	border: none;
 	flex-wrap: wrap;
 }
-
 
 .header .profile .header__title {
 	font-size: var(--text-title);
@@ -45,11 +44,12 @@
 	font-size: var(--text-general);
 }
 
-.header .links a {
+/* Regular navigation links */
+.header .links a.menu__link:not(.icon-only) {
 	position: relative;
 }
 
-.header .links a::after {
+.header .links a.menu__link:not(.icon-only)::after {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -62,19 +62,77 @@
 	transition: 0.35s transform;
 }
 
-.header .links a:hover {
+.header .links a.menu__link:not(.icon-only):hover {
 	color: var(--primary-90);
 }
 
-.header .links a:hover::after {
+.header .links a.menu__link:not(.icon-only):hover::after {
 	transform: scale(1);
 }
+
+/* Social icon links - completely separate styling */
+.header .links a.menu__link.icon-only {
+	position: relative;
+}
+
+.header .links a.menu__link.icon-only::before,
+.header .links a.menu__link.icon-only::after {
+	display: none !important;
+	content: none !important;
+}
+
+.header .links a.menu__link.icon-only:hover {
+	color: inherit;
+}
+
+/* Complete isolation for social icons */
+.menu__link.icon-only {
+	all: unset !important;
+	cursor: pointer !important;
+	display: inline-block !important;
+}
+
+.menu__link.icon-only .icon__container {
+	all: unset !important;
+	display: inline-block !important;
+	padding: 8px !important;
+	border-radius: 8px !important;
+	transition: all 0.3s ease !important;
+	background-color: transparent !important;
+}
+
+.menu__link.icon-only:hover .icon__container {
+	background-color: rgba(116, 198, 157, 0.15) !important;
+	transform: scale(1.15) !important;
+}
+
+.menu__link.icon-only .icons {
+	all: unset !important;
+	display: inline-block !important;
+	width: 24px !important;
+	height: 24px !important;
+	transition: all 0.3s ease !important;
+	color: var(--primary-100) !important;
+}
+
+.menu__link.icon-only:hover .icons {
+	color: var(--primary-50) !important;
+}
+
+/* Hide icons by default */
 .icons {
 	display: none;
 }
+
+/* Show icons only for icon-only items (social links) */
+.menu__link.icon-only .icons {
+	display: block !important;
+}
+
 .menu__btn {
 	display: none;
 }
+
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 1rem;
@@ -94,13 +152,13 @@
 	.header .header__list {
 		margin-right: 0;
 		z-index: 2;
-		background: #1c0544;
+		background: #1b4332;
 		justify-content: center;
 		align-items: center;
 		border-radius: 14px;
 		width: 100%;
 		padding: 0.8rem 1rem;
-		border: 1px solid #dc5898;
+		border: 1px solid #74c69d;
 		align-self: center;
 		opacity: 0;
 		pointer-events: none;
@@ -137,9 +195,9 @@
 		transition: 0.35s opacity;
 		max-width: -moz-max-content;
 		max-width: max-content;
-		color: #33f3c6;
+		color: #74c69d;
 		position: absolute;
-		border: 2px solid #33f3c6;
+		border: 2px solid #74c69d;
 		pointer-events: all;
 		animation: linear scroll-btn;
 		animation-timeline: scroll();
@@ -153,6 +211,5 @@
 	}
 	2% {
 		opacity: inherit;
-
 	}
 }

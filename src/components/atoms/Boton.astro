@@ -10,18 +10,24 @@ const { href, texto } = Astro.props;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 1.1rem 2.2rem;
-		background: var(--primary);
+		padding: 1.4rem 2.8rem;
+		background: var(--primary-100);
+		border: 2px solid var(--primary-60);
 		border-radius: 100px;
 		font-size: var(--text-x-large);
-		transition: 0.35s opacity;
+		font-weight: 600;
+		transition: all 0.3s ease;
 		max-width: max-content;
-		color: var(--primary-90);
+		color: var(--primary-10);
+		text-decoration: none;
 	}
 	.button:hover {
-		opacity: 0.7;
+		background: var(--primary-95);
+		border-color: var(--primary-50);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(116, 198, 157, 0.3);
 	}
 	.button:active {
-		opacity: 0.5;
+		transform: translateY(0);
 	}
 </style>

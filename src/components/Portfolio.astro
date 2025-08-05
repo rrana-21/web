@@ -5,28 +5,113 @@ import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
 <section
-	id="portafolio"
-	class="flex flex-col w-full  justify-center items-center h-auto min-h-[100dvh]  "
+	id="portfolio"
+	class="flex flex-col w-full justify-center items-center h-auto min-h-[100dvh]"
 >
 	<div class="portfolio__container">
-		<Title contenido="Portafolio" />
+		<Title contenido="Selected Work" />
 		<div class="portfolio__elements">
 			{getPortafolioData.map((props) => <Card {...props} />)}
+		</div>
+		<div class="see-all-button">
+			<a href="https://github.com/rrana-21" class="see-all-work-btn" target="_blank" rel="noopener noreferrer">
+				<span>See All Work</span>
+				<iconify-icon icon="material-symbols:arrow-outward" width="20" height="20"></iconify-icon>
+			</a>
 		</div>
 	</div>
 </section>
 
 <style>
+	#portfolio {
+		background: transparent !important;
+	}
+	
+	#portfolio h2 {
+		font-size: var(--text-xxx-large) !important;
+		font-weight: 600 !important;
+		color: var(--primary-100) !important;
+	}
+	
 	.portfolio__elements {
-		max-width: var(--max-width);
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 4rem;
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 32px;
+		justify-items: center;
+		padding: 40px 20px;
+	}
+
+	.see-all-button {
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	.see-all-work-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		padding: 16px 32px;
+		background: rgba(255, 255, 255, 0.08);
+		border: 2px solid rgba(116, 198, 157, 0.3);
+		border-radius: 50px;
+		color: var(--primary-100);
+		text-decoration: none;
+		font-size: var(--text-large);
+		font-weight: 600;
+		transition: all 0.3s ease;
+		backdrop-filter: blur(10px);
+	}
+
+	.see-all-work-btn:hover {
+		background: rgba(116, 198, 157, 0.15);
+		border-color: rgba(116, 198, 157, 0.5);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(116, 198, 157, 0.2);
+	}
+
+	.see-all-work-btn iconify-icon {
+		transition: transform 0.3s ease;
+	}
+
+	.see-all-work-btn:hover iconify-icon {
+		transform: translateX(4px) translateY(-4px);
+	}
+
+	/* Responsive design */
+	@media screen and (max-width: 1200px) {
+		.portfolio__elements {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			max-width: 800px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.portfolio__elements {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);
+			max-width: 400px;
+			gap: 24px;
+		}
+		
+		#portfolio h2 {
+			font-size: var(--text-xx-large) !important;
+		}
+
+		.see-all-work-btn {
+			padding: 14px 28px;
+			font-size: var(--text-medium);
+		}
 	}
 </style>
 
 <script>
+	// Commented out the script that was overriding white backgrounds
+	// If you want dynamic backgrounds based on images, you can uncomment this
+	
+	/*
 	import { getIMGAverageColor } from '../utils/average-img-color/average-img-color';
 
 	const $cards = document.querySelectorAll('.card__portfolio');
@@ -44,4 +129,5 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		setBg();
 		$img.onload = setBg;
 	});
+	*/
 </script>
