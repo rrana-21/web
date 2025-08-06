@@ -6,7 +6,11 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://rrana-21.github.io',
-  base: process.env.NODE_ENV === 'production' ? '/web' : '',
+  base: '/web',
+  trailingSlash: 'ignore',
+  build: {
+    assets: '_astro'
+  },
   devToolbar: {
     enabled: false
   },
